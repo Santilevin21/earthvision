@@ -13,7 +13,6 @@ input {
     height: 30px; 
   }
 
-  /* 1. Centrar todo en la pantalla */
 body {
     margin: 0;
     height: 100vh;           
@@ -25,19 +24,17 @@ body {
     background-color: #f4f4f9; 
   }
   
-  /* 2. Contenedor de los inputs y el botón */
   .login-container {
     display: flex;
-    flex-direction: column;    /* Coloca los inputs uno abajo del otro */
-    gap: 15px;                 /* Separa los elementos de forma exacta */
-    width: 400px;              /* Ancho fijo que tenías guardado */
+    flex-direction: column;    
+    gap: 15px;                
+    width: 400px;              
   }
   
-  /* 3. Estilo simplificado para los elementos internos */
   input, button {
-    width: 100%;               /* Ocupan el 100% de los 400px del contenedor */
-    height: 35px;              /* Un poco más alto para mejor clickeo */
-    box-sizing: border-box;    /* Evita que el padding rompa el ancho */
+    width: 100%;               
+    height: 35px;             
+    box-sizing: border-box;    
   }
   
 
@@ -61,4 +58,3 @@ h3
     
 }
 
-  
