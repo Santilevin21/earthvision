@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Earth Engine - Proyecto Agroindustria</title>
+</head>
+<body>
+
+    <h1>Prueba Earth Engine — Sentinel-2</h1>
+    <p class="sub">Proyecto Agroindustria · Evaluación de 10 hectáreas continuas</p>
+
+    <!-- Eliminamos el botón, todo ocurre en esta caja automáticamente -->
+    <div class="imagen-box" id="caja"></div>
+
+    <script>
+        async function cargarZona() {
+            const caja = document.getElementById('caja');
+
+            caja.innerHTML = '<span class="cargando" style="color: blue;">Pidiendo datos de 10 hectáreas a Earth Engine... Esto demorará unos 10-20 segundos.</span>';
+
+            try {
+                // Llama al nuevo endpoint que creamos en Flask
+                const resp = await fetch('/api/hectareas');
+                const dataArray = await resp.json();
+
+                caja.innerHTML = ''; // Limpiar mensaje de carga
+
+                dataArray.forEach((data, index) => {
+                    const divHectarea = document.createElement('div');
+                    divHectarea.style.marginBottom = '30px';
+                    divHectarea.style.borderBottom = '2px solid #eee';
+                    divHectarea.style.paddingBottom = '15px';
+
+                    if (data.ok) {
+                        // Construimos el bloque de texto con los datos que mandó Python
+                        divHectarea.innerHTML = `
+                            <h2>Hectárea ${index + 1} (Coords: ${data.lat}, ${data.lng})</h2>
+                            <img src="${data.url}" width="400" alt="Hectárea ${index + 1}">
+                            <h3>Fertilidad estimada — ${data.fertilidad}%</h3>
+                            <p>Vigor Vegetativo: ${data.estado_ndvi} (${data.ndvi})</p>
+                            <p>Humedad en la parcela: ${data.estado_ndmi} (${data.ndmi})</p>
+                            <p>Temperatura: ${data.estado_temperatura} (${data.temperatura} °C)</p>
+                            <p>Precipitación: ${data.estado_precipitacion} (${data.precipitacion} mm)</p>
+                        `;
+                    } else {
+                        divHectarea.innerHTML = `
+                            <h2>Hectárea ${index + 1}</h2>
+                            <span class="error" style="color: red;">Error al procesar: ${data.error}</span>
+                        `;
+                    }
+
+                    caja.appendChild(divHectarea);
+                });
+
+            } catch (e) {
+                caja.innerHTML = '<span class="error" style="color: red;">Error de conexión con el servidor. Revisa la consola de Flask.</span>';
+                console.error(e);
+            }
+        }
+
+        // Ejecutar la función automáticamente en cuanto el HTML cargue
+        window.onload = cargarZona;
+    </script>
+
+</body>
+</html>
