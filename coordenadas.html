@@ -3,180 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Agrícola - Boceto</title>
-    <style>
-        /* Estilos globales y reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #8E8987;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Contenedor Principal Split (Mitad y Mitad) */
-        .dashboard-container {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            background-color: #A39E9C;
-            border: 2px solid #555;
-            min-height: 600px;
-        }
-
-        /* Columnas Principales */
-        .panel-izquierdo {
-            width: 50%;
-            padding: 30px;
-            border-right: 2px solid #555;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .panel-derecho {
-            width: 50%;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        /* Componentes Comunes (Bloques Grises) */
-        .bloque-gris {
-            background-color: #D1CDCC;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 14px;
-            padding: 8px 12px;
-        }
-
-        /* Estilos Panel Izquierdo */
-        .header-izquierdo {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-        }
-
-        .selector-hectarea {
-            width: 160px;
-            height: 35px;
-            margin-top: 20px;
-        }
-
-        .cuadrado-chico {
-            width: 20px;
-            height: 20px;
-            margin-top: 28px;
-        }
-
-        /* Tarjeta de Datos */
-        .tarjeta-datos {
-            background-color: #B8B3F2; /* Un tono ligeramente diferente para el fondo del contenedor */
-            background-color: #B5B0AE; 
-            border: 1px solid #777;
-            padding: 20px;
-            margin: 0 auto;
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .titulo-datos {
-            width: 140px;
-            height: 35px;
-            margin: 0 auto 10px auto;
-        }
-
-        /* Filas de la Tabla */
-        .fila-tabla {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .col-texto {
-            width: 110px;
-            height: 35px;
-            justify-content: flex-start;
-            padding-left: 10px;
-        }
-
-        .col-crecimiento {
-            flex-grow: 1;
-            height: 35px;
-            font-size: 12px;
-            border-left: 3px solid #555;
-            justify-content: flex-start;
-            padding-left: 10px;
-        }
-
-        .col-porcentaje {
-            width: 35px;
-            height: 35px;
-        }
-
-        /* Estilos Panel Derecho */
-        .filtro-fecha {
-            width: 70%;
-            height: 40px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
-
-        .barra-tiempo {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .btn-tiempo {
-            flex-grow: 1;
-            height: 30px;
-            font-size: 13px;
-        }
-
-        .btn-cuadrado {
-            width: 30px;
-            height: 30px;
-        }
-
-        /* Contenedor del Mapa */
-        .contenedor-mapa {
-            background-color: #D1CDCC;
-            border: 1px solid #777;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 42px;
-            color: #000;
-            min-height: 400px;
-        }
-    </style>
+    <title>Earth Vision</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="dashboard-container">
         
-        <!-- MITAD IZQUIERDA: PANEL DE DATOS -->
         <div class="panel-izquierdo">
             <div class="header-izquierdo">
                 <div class="bloque-gris logo">LOGO</div>
@@ -187,31 +20,31 @@
             <div class="tarjeta-datos">
                 <div class="bloque-gris titulo-datos">Datos</div>
                 
-                <!-- Fila 1 -->
+
                 <div class="fila-tabla">
                     <div class="bloque-gris col-texto">texto</div>
                     <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
                     <div class="bloque-gris col-porcentaje">%</div>
                 </div>
-                <!-- Fila 2 -->
+
                 <div class="fila-tabla">
                     <div class="bloque-gris col-texto">texto</div>
                     <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
                     <div class="bloque-gris col-porcentaje">%</div>
                 </div>
-                <!-- Fila 3 -->
+
                 <div class="fila-tabla">
                     <div class="bloque-gris col-texto">texto</div>
                     <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
                     <div class="bloque-gris col-porcentaje">%</div>
                 </div>
-                <!-- Fila 4 -->
+
                 <div class="fila-tabla">
                     <div class="bloque-gris col-texto">texto</div>
                     <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
                     <div class="bloque-gris col-porcentaje">%</div>
                 </div>
-                <!-- Fila 5 -->
+
                 <div class="fila-tabla">
                     <div class="bloque-gris col-texto">texto</div>
                     <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
