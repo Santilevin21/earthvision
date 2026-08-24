@@ -45,6 +45,7 @@ button {
     height: 40px; 
     text-align: center;
     font-size: 16px;
+    
 }
 h3 
 {
@@ -270,11 +271,12 @@ body {
   
 
   .dashboard-container .titulo-campos {
-      background-color: #e0e0e0;
-      padding: 12px;
-      text-align: center;
-      font-size: 16px;
-      color: #000;
+    background-color: #e0e0e0;
+    padding: 14px 20px;
+    font-size: 15px;
+    color: #000;
+    width: 100%;
+    text-align: right;
   }
   
   .dashboard-container .fila-tabla {

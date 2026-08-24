@@ -1,7 +1,7 @@
 const requiredUser = "Douglas";
 const requiredPassword = "Dinero";
 
-const button = document.getElementById('login');
+const button = document.getElementById('hectarea');
 const userInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const responseText = document.getElementById('response');
