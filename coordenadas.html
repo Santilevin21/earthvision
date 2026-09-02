@@ -7,69 +7,71 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="dashboard-container">
-        
-        <div class="panel-izquierdo">
-            <div class="header-izquierdo">
+    <main class="dashboard-container">
+        <aside class="panel-izquierdo">
+            <header class="header-izquierdo">
                 <div class="bloque-gris logo">LOGO</div>
-                <div class="bloque-gris selector-hectarea">Hectarea 1</div>
+                <nav class="bloque-gris selector-hectarea">Hectarea 1</nav>
                 <div class="bloque-gris cuadrado-chico"></div>
-            </div>
-
-            <div class="tarjeta-datos">
+            </header>
+            
+            <section class="tarjeta-datos">
                 <div class="bloque-gris titulo-datos">Datos</div>
                 
+                <table class="tabla-metricas">
+                    <thead>
+                        <tr class="fila-tabla">
+                            <th class="bloque-gris col-texto">texto</th>
+                            <th class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</th>
+                            <th class="bloque-gris col-porcentaje">%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fila-tabla">
+                            <td class="bloque-gris col-texto">texto</td>
+                            <td class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</td>
+                            <td class="bloque-gris col-porcentaje">%</td>
+                        </tr>
+                        <tr class="fila-tabla">
+                            <td class="bloque-gris col-texto">texto</td>
+                            <td class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</td>
+                            <td class="bloque-gris col-porcentaje">%</td>
+                        </tr>
+                        <tr class="fila-tabla">
+                            <td class="bloque-gris col-texto">texto</td>
+                            <td class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</td>
+                            <td class="bloque-gris col-porcentaje">%</td>
+                        </tr>
+                        <tr class="fila-tabla">
+                            <td class="bloque-gris col-texto">texto</td>
+                            <td class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</td>
+                            <td class="bloque-gris col-porcentaje">%</td>
+                        </tr>
+                        <tr class="fila-tabla">
+                            <td class="bloque-gris col-texto">texto</td>
+                            <td class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</td>
+                            <td class="bloque-gris col-porcentaje">%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </aside>
 
-                <div class="fila-tabla">
-                    <div class="bloque-gris col-texto">texto</div>
-                    <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
-                    <div class="bloque-gris col-porcentaje">%</div>
-                </div>
-
-                <div class="fila-tabla">
-                    <div class="bloque-gris col-texto">texto</div>
-                    <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
-                    <div class="bloque-gris col-porcentaje">%</div>
-                </div>
-
-                <div class="fila-tabla">
-                    <div class="bloque-gris col-texto">texto</div>
-                    <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
-                    <div class="bloque-gris col-porcentaje">%</div>
-                </div>
-
-                <div class="fila-tabla">
-                    <div class="bloque-gris col-texto">texto</div>
-                    <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
-                    <div class="bloque-gris col-porcentaje">%</div>
-                </div>
-
-                <div class="fila-tabla">
-                    <div class="bloque-gris col-texto">texto</div>
-                    <div class="bloque-gris col-crecimiento">Crecimiento o<br>decrecimiento</div>
-                    <div class="bloque-gris col-porcentaje">%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel-derecho">
+        <section class="panel-derecho">
             <div class="bloque-gris filtro-fecha">Fecha</div>
             
-            <div class="barra-tiempo">
-                <div class="bloque-gris btn-tiempo">24 horas</div>
-                <div class="bloque-gris btn-tiempo">7 dias</div>
-                <div class="bloque-gris btn-tiempo">30 dias</div>
-                <div class="bloque-gris btn-tiempo">1 año</div>
-                <div class="bloque-gris btn-cuadrado"></div>
-            </div>
-
-            <div class="contenedor-mapa">
+            <nav class="barra-tiempo">
+                <button type="button" class="bloque-gris btn-tiempo">24 horas</button>
+                <button type="button" class="bloque-gris btn-tiempo">7 dias</button>
+                <button type="button" class="bloque-gris btn-tiempo">30 dias</button>
+                <button type="button" class="bloque-gris btn-tiempo">1 año</button>
+                <button type="button" class="bloque-gris btn-cuadrado"></button>
+            </nav>
+            
+            <article class="contenedor-mapa">
                 Mapa
-            </div>
-        </div>
-
-    </div>
-
+            </article>
+        </section>
+    </main>
 </body>
 </html>
