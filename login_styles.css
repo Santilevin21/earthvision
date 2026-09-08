@@ -1,0 +1,65 @@
+h1 {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+input {
+    justify-content: space-between;
+    width: 350px; 
+    height: 30px; 
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 50px; 
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #288f00 !important;
+    color: #ffffff !important;
+    border-color: #1a1a1a !important;
+    transform: scale(0.93);
+
+  }
+  
+  
+  .btn:active {
+    transform: scale(0.85);
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;           
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;   
+    align-items: center;     
+    font-family: sans-serif;
+    background-image: url("campo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container {
+    flex-direction: column;    
+    align-items: center;
+    justify-content: center;
+    gap: 15px;                
+    width: 30%; 
+    height: 600px;  
+    background-color: rgba(0, 0, 0, 0.699); 
+    border-radius: 10%; 
+    display: flex;         
+  }

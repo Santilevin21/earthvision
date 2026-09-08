@@ -23,13 +23,7 @@ body {
     font-family: sans-serif;
     background-color: #f4f4f9; 
   }
-  
-  .login-container {
-    display: flex;
-    flex-direction: column;    
-    gap: 15px;                
-    width: 400px;              
-  }
+
   
   input, button {
     width: 100%;               
