@@ -1,57 +1,425 @@
+/* ---------- Reset base ---------- */
+* {
+  box-sizing: border-box;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ---------- Contenedor general (pantalla completa) ---------- */
+.page-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- Textos decorativos ---------- */
+.deco {
+  position: absolute;
+  font-family: 'Segoe Script', 'Brush Script MT', cursive;
+  font-style: italic;
+  font-size: clamp(18px, 2.4vw, 26px);
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deco-top-left    { top: 12%; left: 4%; }
+.deco-top-right   { top: 10%; right: 5%; }
+.deco-bottom-left { bottom: 8%; left: 3%; }
+.deco-bottom-right{ bottom: 30%; right: 4%; }
+
+.page-wrapper.expanded .deco {
+  opacity: 0;
+}
+
+/* ---------- Texto introductorio (lado izquierdo, pantalla completa) ---------- */
+.intro-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 60px;
+  opacity: 0;
+  transform: translateX(-40px);
+  pointer-events: none;
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.page-wrapper.expanded .intro-section {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.intro-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.intro-line-1 {
+  font-family: 'Brush Script MT', 'Segoe Script', cursive;
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.intro-line-2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(36px, 5.5vw, 68px);
+  color: #ffffff;
+  -webkit-text-stroke: 1px #1a1a1a;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 4px;
+}
+
+.brand-badge {
+  margin-top: 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-badge-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+/* ---------- Tarjeta principal (pantalla completa verticalmente) ---------- */
 .login-container {
-    display: flex;
-    flex-direction: column;    
-    gap: 15px;                
-    width: 400px;    
-    height: 500px;
-    background-color: #000000d0;  
-    border-radius: 10%;    
-    align-items: center;
-    display: flex;
-    justify-content: center;   
-  }
-  
-  
-  input, button {
-    width: 100%;               
-    height: 35px;             
-    box-sizing: border-box;    
-  }
-  
-
-button {
-    display: block;
-    margin: 0 auto;
-    width: 100px; 
-    height: 40px; 
-    text-align: center;
-    font-size: 16px;
-    
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 420px;
+  max-width: 92vw;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(1px);
+  border-radius: 90px 90px 0 0;
+  padding: 40px 30px;
+  overflow-y: auto;
+  z-index: 2;
+  transition: right 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              border-radius 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-h3 
-{
-    text-align: center;
-}
-  html, body {
-    overflow: hidden;
-  }
-  
 
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-        background-image: url('background.jpg');
-        
-        background-repeat: no-repeat;
-        
-        background-size: cover;
-        
-        background-position: center;
-        
-        background-attachment: fixed;
+.page-wrapper.expanded .login-container {
+  right: 0;
+  transform: translateX(0);
+  border-radius: 60px 0 0 60px;
+}
+
+/* ---------- Logo ---------- */
+.logo-box {
+  flex-shrink: 0;
+  width: 120px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Fila Sing-up (estado inicial) ---------- */
+.signup-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-height: 60px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.4s ease, margin 0.6s ease;
+}
+
+.page-wrapper.expanded .signup-row {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #2b2b2b;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-trigger-btn {
+  flex: 1;
+  height: 38px;
+  background-color: #3d8f3d;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signup-trigger-btn:hover {
+  background-color: #357a35;
+}
+
+/* ---------- Tab Login (estado expandido) ---------- */
+.login-tab {
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background-color: #3d8f3d;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  transition: max-height 0.6s ease 0.15s, opacity 0.5s ease 0.15s;
+}
+
+.page-wrapper.expanded .login-tab {
+  max-height: 40px;
+  height: 40px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Inputs ---------- */
+input {
+  width: 100%;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 22px;
+  padding: 0 18px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Campos extra (estado expandido) ---------- */
+.extra-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, opacity 0.6s ease 0.2s;
+}
+
+.page-wrapper.expanded .extra-fields {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* ---------- Botón final ---------- */
+.signup-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #3d8f3d;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #357a35;
+}
+
+/* ---------- Texto de respuesta ---------- */
+h3 {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .intro-section {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      padding: 0 30px;
+  }
+
+  .login-container {
+      width: 100vw;
+      max-width: 100vw;
+      border-radius: 0;
+  }
+
+  .page-wrapper.expanded .login-container {
+      border-radius: 0;
+  }
+}
+
+/* ---------- Accesibilidad ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .intro-section,
+  .login-container,
+  .signup-row,
+  .login-tab,
+  .extra-fields,
+  .deco {
+      transition: none !important;
+  }
+}
+
+/* Botón verde flúor integrado */
+.btn-map-fluor {
+  width: 100%;
+  height: 42px;
+  background-color: #39ff14;
+  color: #0d1b0e;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-map-fluor:hover {
+  background-color: #32e010;
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.6);
+}
+
+/* Modal interactivo */
+.map-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.map-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.map-card {
+  width: 90%;
+  max-width: 600px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  overflow: hidden;
+}
+
+.map-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: #262626;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.map-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#map-container {
+  width: 100%;
+  height: 380px;
+  background-color: #222;
 }
