@@ -1,3 +1,4 @@
+<<<<<<< HEAD:styles.css
 h1 {
     text-align: center;
     font-size: 40px;
@@ -56,6 +57,8 @@ h3
 
 
 
+=======
+>>>>>>> d2993a2c63095408f844f0799ed9ff77cbe5fabc:css/coordenadas_styles.css
 style
 * {
     box-sizing: border-box;
@@ -81,6 +84,7 @@ body {
         
         background-attachment: fixed;
 }
+
 .dashboard-container {
     display: flex;
     width: 100%;
