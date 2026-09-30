@@ -142,9 +142,15 @@ body {
   padding: 40px 30px;
   overflow-y: auto;
   z-index: 2;
+<<<<<<< HEAD
   transition: right 0.9s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
               border-radius 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+=======
+  transition: right 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              border-radius 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+>>>>>>> 13dddd2725094db16ab0757a8d374b6471228f01
 }
 
 .page-wrapper.expanded .login-container {
