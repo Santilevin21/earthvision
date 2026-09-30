@@ -1,0 +1,162 @@
+:root {
+    --verde: #1a7a1a;
+    --fondo-barra: rgba(20, 20, 20, 0.88);
+    --fondo-etiqueta: #6b6b6b;
+    --borde-hectarea: rgba(40, 40, 40, 0.75);
+    --texto-mapa: #111;
+  
+    --imagen-mapa: linear-gradient(160deg, #4a5a3c 0%, #3b4a30 45%, #6e6a55 100%);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: var(--imagen-mapa) center / cover no-repeat;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .barra-lateral {
+    display: flex;
+    width: 240px;
+    height: 100%;
+    flex-shrink: 0;
+    background: var(--fondo-barra);
+    border-radius: 0 70px 70px 0;
+    padding: 10px 0 10px 12px;
+  }
+  
+  .barra-iconos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: 48px;
+    padding-top: 78px;
+  }
+  
+  .boton-icono {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .boton-icono svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  .boton-icono.activo {
+    background: var(--verde);
+  }
+  
+  .boton-icono:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+  
+  .panel {
+    flex: 1;
+    min-width: 0;
+    padding: 0 24px 0 20px;
+    position: relative;
+  }
+  
+  .logo {
+    width: 66px;
+    height: 66px;
+    margin: 0 0 24px -6px;
+    background: #fff;
+    border-radius: 18px 18px 18px 0;
+    overflow: hidden;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .panel-titulo {
+    margin-top: 0;
+    padding: 3px 8px;
+    background: var(--verde);
+    color: #fff;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .lista-campos {
+    list-style: none;
+    margin-top: 18px;
+    padding: 10px 8px;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .lista-campos li {
+    padding: 1px 6px;
+    background: var(--fondo-etiqueta);
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .mapa {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  
+  .grilla {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: min(100%, 240px);
+  }
+  
+  .hectarea {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--borde-hectarea);
+    border-radius: 18px;
+    color: var(--texto-mapa);
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 560px) {
+    .barra-lateral {
+      width: 200px;
+      border-radius: 0 40px 40px 0;
+    }
+    .panel {
+      padding: 0 14px 0 10px;
+    }
+  }
